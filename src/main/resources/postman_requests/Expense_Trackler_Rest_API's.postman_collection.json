@@ -1,0 +1,455 @@
+{
+	"info": {
+		"_postman_id": "332d0a93-123c-452b-a4be-2135f133c9ea",
+		"name": "Expense Trackler Rest API's",
+		"description": "Expense Trackler Rest API's",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "account",
+			"item": [
+				{
+					"name": "get all accounts",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "test1234",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "vignesh",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/accounts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"accounts"
+							]
+						},
+						"description": "get all accounts"
+					},
+					"response": []
+				},
+				{
+					"name": "create a account",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "test1234",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "vignesh",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Sara And Vicky Family\",\n  \"description\": \"Manage Money related to Sara and Vicky Family\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/accounts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"accounts"
+							]
+						},
+						"description": "Post method to create a account"
+					},
+					"response": []
+				},
+				{
+					"name": "get a specific account",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "test1234",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "vignesh",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/accounts/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"accounts",
+								"2"
+							]
+						},
+						"description": "retreive a specific account by id"
+					},
+					"response": []
+				},
+				{
+					"name": "get users of a account",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/accounts/1/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"accounts",
+								"1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Account related api requests",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "get all users",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "test1234",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "vignesh",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users"
+							]
+						},
+						"description": "retreive all users"
+					},
+					"response": []
+				},
+				{
+					"name": "post user data",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "test1234",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "vignesh",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"vignesh\",\n\t\"email\": \"contactmevickey@gmail.com\",\n\t\"profession\": \"Software Engineer\",\n\t\"incomePerMonth\": 74500,\n\t\"account\": \"http://localhost:8080/accounts/2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users"
+							]
+						},
+						"description": "save a user"
+					},
+					"response": []
+				},
+				{
+					"name": "get account of a user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/users/5/account",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"5",
+								"account"
+							]
+						},
+						"description": "fetch account details of a user"
+					},
+					"response": []
+				},
+				{
+					"name": "get all investments of a user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/users/3/investments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"3",
+								"investments"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "User related rest api requests",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "investment category",
+			"item": [
+				{
+					"name": "get all investment category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/investmentcategorys",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"investmentcategorys"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create a investment category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"PPF\",\n\t\"description\": \"Long term - Post office savings\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/investmentcategorys",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"investmentcategorys"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "investment",
+			"item": [
+				{
+					"name": "get all investment",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/investments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"investments"
+							]
+						},
+						"description": "get all investment"
+					},
+					"response": []
+				},
+				{
+					"name": "add a investment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"investmentInfo\": \"FD in HDFC savings account\",\n\t\"tenureYears\": 5,\n\t\"investmentDate\": \"2019-12-30\",\n\t\"investmentCategory\": \"http://localhost:8080/investmentcategorys/5\",\n\t\"principal\": 75000,\n\t\"creditReturn\": 102514,\n\t\"user\": \"http://localhost:8080/users/3\",\n\t\"account\": \"http://localhost:8080/accounts/1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/investments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"investments"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Get a Users Savings",
+			"item": [
+				{
+					"name": "Users total Savings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/expense/savings?userId=3&accountId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"expense",
+								"savings"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "3"
+								},
+								{
+									"key": "accountId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Get a Users Savings upto date",
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
